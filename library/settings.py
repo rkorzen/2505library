@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'authors.apps.AuthorsConfig',
     'books.apps.BooksConfig',
+    'posts.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [

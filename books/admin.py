@@ -6,4 +6,10 @@ from books.models import Book
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['id', 'title', 'author_first_name', 'author_last_name', 'a_first_name']
+
+    def author_first_name(self, obj):
+        return obj.author.first_name
+
+    def author_last_name(self, obj):
+        return obj.author.last_name
