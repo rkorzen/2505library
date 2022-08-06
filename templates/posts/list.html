@@ -9,16 +9,6 @@
 {% endfor %}
 </ul>
 
-<form method="POST">
-  {% csrf_token %}
-  <p>
-  <label for="title">Tytuł</label>
-  <input type="text" id="title" name="title">
-  </p>
-  <p>
-     <textarea id="content" name="content" rows="4" cols="50" placeholder="treść"></textarea>
-  </p>
-  <input type="submit" value="send">
-</form>
+{% include 'posts/includes/post_form.html' %}
 
 {% endblock %}
