@@ -2,7 +2,21 @@
   <h1>{{ post.title }}</h1>
   <small>By: {{ post.author }}</small>
   <p>{{ post.content }}</p>
+
+  <div>
+    {% for c in post.comments.all %}
+      <div>
+      {{ c.content }}
+      <br>
+      <small>{{ c.email }} | {{ c.created }}</small>
+      </div>
+    {% endfor %}
+  </div>
+
+
   {% if user == post.author %}
-  {% include 'posts/includes/post_form.html' %}
+    {% include 'posts/includes/post_form.html' %}
   {% endif %}
+
+  {% include 'posts/includes/comment_form.html' %}
 {% endblock %}
