@@ -32,7 +32,6 @@ INTERNAL_IPS = [
     # ...
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,6 +44,8 @@ INSTALLED_APPS = [
 
     "debug_toolbar",
     'django_extensions',
+    'crispy_forms',
+    "crispy_bootstrap5",
 
     'authors.apps.AuthorsConfig',
     'books.apps.BooksConfig',
@@ -115,9 +116,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl-PL'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Warsaw'
 
 USE_I18N = True
 
@@ -134,3 +135,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = "dashboard"
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"

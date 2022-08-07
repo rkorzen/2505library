@@ -1,11 +1,9 @@
 django==4.1
-
-
-
-django_extensions
-
+django-crispy-forms
+crispy-bootstrap5
 
 # Devel
+django_extensions
 django-debug-toolbar
 
 

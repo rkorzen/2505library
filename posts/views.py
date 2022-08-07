@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from comments.forms import CommentForm
+from comments.forms import CommentForm, CommentForm2
 
 # Create your views here.
 from comments.models import CommentPost
@@ -49,15 +49,18 @@ def details(request, post_id):
                 post_form.save()
 
         elif 'comment_submit' in request.POST:
-            comment_form = CommentForm(request.POST)
+            comment_form = CommentForm2(request.POST)
             if comment_form.is_valid():
-                data = dict(comment_form.cleaned_data)
-                data['post'] = post
-                comment = CommentPost.objects.create(**data)
+                # data = dict(comment_form.cleaned_data)
+                # data['post'] = post
+                # comment = CommentPost.objects.create(**data)
+                comment = comment_form.save(commit=False)
+                comment.post = post
+                comment.save()
 
     data = {'title': post.title, "content": post.content}
     post_form = PostForm2(data=data)
-    comment_form = CommentForm()
+    comment_form = CommentForm2()
 
     return render(
         request,
