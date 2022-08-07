@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-*)v(0s7lrt^309ss5zey1t_1$er^9q-4jrajdlg-*coleno4mt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 INTERNAL_IPS = [
     # ...
@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'users.apps.UsersConfig',
     'comments.apps.CommentsConfig',
+    'tags.apps.TagsConfig',
+    'galleries.apps.GalleriesConfig',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "static"
+STATICFILES_DIRS = [
+    '/var/www/static/',
+]
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -138,5 +146,4 @@ LOGOUT_REDIRECT_URL = "dashboard"
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-
 CRISPY_TEMPLATE_PACK = "bootstrap5"

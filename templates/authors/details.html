@@ -2,14 +2,22 @@
 
 {% block content %}
 <h1>{{ author }}</h1>
+  <div class="row">
+    <div class="col-lg-6">
+        <ul>
+        {% for book in author.books.all %}
+        <li><a href="{% url 'books:details' book.id %}">{{ book.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="col-lg-6">
+      <img src="{{ author.image.url }}" width="100%">
+    </div>
 
+  </div>
 <h2>Publikacje xxx</h2>
 
-<ul>
-{% for book in author.books.all %}
-  <li><a href="{% url 'books:details' book.id %}">{{ book.title }}</a></li>
-{% endfor %}
-</ul>
+
 
 <a href="{% url 'authors:list' %}">Lista autorów</a>
 {% endblock %}
