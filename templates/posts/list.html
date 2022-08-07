@@ -8,7 +8,7 @@
   <li><a href="#">{{ p }}</a> </li>
 {% endfor %}
 </ul>
-
+{% if user.is_authenticated %}
 {% include 'posts/includes/post_form.html' %}
-
+{% endif %}
 {% endblock %}

@@ -13,3 +13,7 @@ class BookAdmin(admin.ModelAdmin):
 
     def author_last_name(self, obj):
         return obj.author.last_name
+
+
+    author_first_name.admin_order_field = 'author__first_name'
+    author_last_name.admin_order_field = 'author__last_name'

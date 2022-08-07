@@ -1,3 +1,8 @@
 {% block content %}
-{% include 'posts/includes/post_form.html' %}
+  <h1>{{ post.title }}</h1>
+  <small>By: {{ post.author }}</small>
+  <p>{{ post.content }}</p>
+  {% if user == post.author %}
+  {% include 'posts/includes/post_form.html' %}
+  {% endif %}
 {% endblock %}

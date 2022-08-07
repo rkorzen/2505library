@@ -8,11 +8,13 @@ def listview(request):
     posts = Post.objects.all()
     print(request.method)
     print(request.user)
+    print(request.user.is_authenticated)
     if request.method == "POST":
 
         title = request.POST.get("title")
         content = request.POST.get("content")
-
+        print(request.user)
+        print(type(request.user))
         post = Post.objects.create(
             title=title,
             content=content,

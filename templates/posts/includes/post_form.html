@@ -2,10 +2,20 @@
   {% csrf_token %}
   <p>
   <label for="title">Tytuł</label>
-  <input type="text" id="title" name="title" value="{{ post.title }}">
+  <input type="text"
+         id="title"
+         name="title"
+         value="{{ post.title }}"
+  >
   </p>
   <p>
-     <textarea id="content" name="content" rows="4" cols="50" placeholder="treść">{{ post.content }}</textarea>
+     <textarea id="content"
+               name="content"
+               rows="4"
+               cols="50"
+               placeholder="treść"
+     >{{ post.content }}</textarea>
   </p>
-  <input type="submit" value="send">
-</form>
+
+    <input type="submit" value="send">
+  </form>
